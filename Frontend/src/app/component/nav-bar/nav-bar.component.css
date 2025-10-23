@@ -1,0 +1,95 @@
+.swiggy-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 50px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  font-family: 'Inter', sans-serif;
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .logo img {
+      width: 40px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .location {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #3d4152;
+
+      .area-name {
+        font-weight: 700;
+        border-bottom: 2px solid #000;
+        margin-right: 5px;
+      }
+
+      .address {
+        font-weight: 400;
+        margin-right: 4px;
+      }
+
+      .arrow {
+        font-size: 10px;
+        color: #fc8019;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      color: #3d4152;
+      font-size: 15px;
+      position: relative;
+
+      .icon {
+        font-size: 18px;
+      }
+
+      .new-badge {
+        color: #fc8019;
+        font-size: 10px;
+        font-weight: 700;
+        position: absolute;
+        top: -6px;
+        right: -22px;
+      }
+
+      &:hover {
+        color: #fc8019;
+      }
+
+      &.active {
+      span {
+        color: #ff6600;
+        text-decoration: underline;
+      }
+    }
+
+      &.cart {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 4px 10px;
+        .cart-count {
+          font-weight: 600;
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+}
