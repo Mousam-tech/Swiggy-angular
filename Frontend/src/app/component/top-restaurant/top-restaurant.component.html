@@ -1,0 +1,20 @@
+<div class="carousel-container">
+  <div class="carousel-header">
+    <h3>Top restaurant chain in Pune</h3>
+    <div class="header-buttons">
+      <button  [ngClass]="currentIndexRestro == 0?'disabled-arrow':''" class="arrow left" (click)="slideRightRestr()">&#10094;</button>
+      <button [ngClass]="currentIndexRestro >=items.length - visibleItems?'disabled-arrow':''" class="arrow right" (click)="slideLeftRestr()">&#10095;</button>
+    </div>
+  </div>
+
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="carousel-inner" [style.transform]="getAnimation()">
+        <div class="item" *ngFor="let item of items" [routerLink]="['/restromenu',item.id]">
+          <img [src]="item.image" alt="{{item.name}}">
+          <p>{{ item.name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

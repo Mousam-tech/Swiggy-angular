@@ -1,0 +1,82 @@
+.restaurant-section {
+  background-color: #fafafa;
+  margin: 0px 60px;
+}
+
+.restaurant-header {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.restaurant-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #282c3f;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.restaurant-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+
+.restaurant-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.restaurant-card:hover {
+  transform: scale(1.03);
+}
+
+
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius:15px
+}
+
+.offer-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.details {
+  padding: 12px;
+}
+
+.details h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.rating-time {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.cuisine, .location {
+  font-size: 13px;
+  color: #999;
+  margin: 2px 0;
+}
