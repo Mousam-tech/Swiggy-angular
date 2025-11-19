@@ -1,0 +1,143 @@
+/* Ensure footer stays at bottom (flex layout handled globally) */
+.footer-container {
+  background-color: #fc8019;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: "Segoe UI", sans-serif;
+  margin-top: auto; /* keeps footer pushed to bottom */
+  width: 100%;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: left;
+    margin-bottom: 20px;
+
+    .footer-section {
+      flex: 1;
+      min-width: 220px;
+
+      h3,
+      h4 {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      p,
+      a {
+        font-size: 14px;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .mailing-list {
+        display: flex;
+        gap: 8px;
+
+        input {
+          padding: 8px 10px;
+          border: none;
+          border-radius: 4px;
+          width: 160px;
+          outline: none;
+        }
+
+        button {
+          background-color: #fff;
+          color: #fc8019;
+          border: none;
+          border-radius: 4px;
+          padding: 8px 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+
+          &:hover {
+            background-color: #f5f5f5;
+          }
+        }
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 12px;
+        margin-top: 8px;
+
+        a {
+          background: #fff;
+          color: #fc8019;
+          font-size: 16px;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          transition: background-color 0.2s ease;
+
+          &:hover {
+            background-color: #f5f5f5;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+    font-size: 13px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 5px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* ✅ Responsive (for small screens) */
+@media (max-width: 768px) {
+  .footer-container {
+    text-align: center;
+
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      .footer-section {
+        min-width: unset;
+
+        .mailing-list {
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+
+          input {
+            width: 80%;
+          }
+
+          button {
+            width: 80%;
+          }
+        }
+
+        .social-icons {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

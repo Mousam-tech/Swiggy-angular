@@ -1,0 +1,22 @@
+<div class="carousel-container">
+  <!-- Header with arrows -->
+  <div class="carousel-header">
+    <h3>What’s On Your Mind?</h3>
+    <div class="header-buttons">
+      <button  [ngClass]="currentIndex == 0?'disabled-arrow':''" class="arrow left" (click)="slideRight()">&#10094;</button>
+      <button [ngClass]="currentIndex >=items.length - visibleItems?'disabled-arrow':''" class="arrow right" (click)="slideLeft()">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Carousel -->
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="carousel-inner" [style.transform]="getTransform()">
+        <div class="item" *ngFor="let item of items">
+          <img [src]="item.image" alt="{{item.name}}" [routerLink]="['/restaurauntFilterFood',item.cuisine]">
+          <p>{{ item.name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
