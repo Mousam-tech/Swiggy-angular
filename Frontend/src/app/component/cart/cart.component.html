@@ -1,1 +1,73 @@
-<p>Cart</p>
+
+@if(cartItems.length>0){<div class="order-container">
+  <div class="order-card">
+    <div class="header">
+      <img [src]="selectedRestro.image" alt="Pizza Hut" />
+      <div>
+        <h2>{{selectedRestro.name}}</h2>
+        <p>Sus Road</p>
+      </div>
+    </div>
+
+    <div class="items-scroll-container">
+      <div *ngFor="let data of cartItems" class="item">
+        <div class="item-info">
+          <input type="checkbox" checked />
+          <div>
+            <p class="item-name">{{data.name}}</p>
+            <a href="#" class="customize">Customize ></a>
+          </div>
+        </div>
+
+        <div class="quantity">
+          <button (click)="DecreaseCount(data.name)">-</button>
+          <span>{{data.count}}</span>
+          <button (click)="IncreaseCount(data.name)">+</button>
+        </div>
+
+        <div class="price">{{ data.price | currency:'INR' }}</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <textarea placeholder="Any suggestions? We will pass it on..."></textarea>
+    </div>
+
+    <div class="no-contact">
+      <input type="checkbox" id="no-contact" />
+      <label for="no-contact">
+        <strong>Opt in for No-contact Delivery</strong>
+        Unwell, or avoiding contact? Please select no-contact delivery.
+        Partner will safely place the order outside your door (not for COD)
+      </label>
+    </div>
+
+    <div class="bill">
+      <p><span>Item Total</span><span>{{itemsprices | currency:'INR'}}</span></p>
+      <p><span>Delivery Fee | 2.0 kms</span><span><s>₹82.00</s> ₹62</span></p>
+      <p><span>GST & Other Charges</span><span>₹76.60</span></p>
+    </div>
+
+    <div class="total">
+      <h3>TO PAY</h3>
+      <h3>{{TotalPrice | currency:'INR'}}</h3>
+    </div>
+  </div>
+</div>
+}
+@else{
+<div class="empty-cart-container">
+  <div class="empty-cart-card">
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png"
+      alt="Empty Cart"
+      class="cart-image"
+    />
+
+    <h2>Your cart is empty</h2>
+    <p>You can go to home page to view more restaurants</p>
+
+    <button class="see-restaurants-btn">SEE RESTAURANTS NEAR YOU</button>
+  </div>
+</div>
+}
