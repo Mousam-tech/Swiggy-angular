@@ -1,0 +1,88 @@
+.offers-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  background: #fafafa;
+  min-height: 100vh;
+
+  .offers-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+
+  .offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .offer-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-logo {
+      width: 80px;
+      height: 50px;
+      margin-bottom: 1rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .card-details {
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 0.5rem;
+      }
+
+      .discount {
+        font-size: 1rem;
+        color: #0a8754;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+      }
+
+      .validity {
+        font-size: 0.9rem;
+        color: #777;
+        margin-bottom: 1rem;
+      }
+
+      .apply-btn {
+        background: linear-gradient(135deg, #0a8754, #1db954);
+        color: #fff;
+        border: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: linear-gradient(135deg, #0a8754, #149645);
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
